@@ -1,22 +1,26 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int sum(int a,int b);
-
-
-int main(){
-    int a,b;
-    printf("Enter the first number:");
-    scanf("%d",&a);
-
-    printf("enter the second number:");
-    scanf("%d",&b);
-
-    int s = sum(a,b);
-    printf("the value of s is %d :",s);
-
-
-return 0;
+void print_grade(int score) {
+    if (score >= 90 && score <= 100) {
+        printf("Grade A\n");
+    } else if (score >= 75 && score <= 89) {
+        printf("Grade B\n");
+    } else if (score >= 60 && score <= 74) {
+        printf("Grade C\n");
+    } else if (score >= 50 && score <= 59) {
+        printf("Grade D\n");
+    } else if (score >= 0 && score <= 49) {
+        printf("Grade F\n");
+    } else {
+        printf("Invalid score\n");
+    }
 }
-int sum(int a,int b){
-    return a+b;
+
+int main() {
+    int studentScore = 85;
+    print_grade(studentScore);
+
+    return 0;
 }
+
+
