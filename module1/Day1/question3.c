@@ -1,44 +1,35 @@
 #include <stdio.h>
 
 int main() {
-    float operand1, operand2;
-    char operator;
-    float result;
+    int rollNo;
+    char name[50];
+    float physicsMarks, mathMarks, chemistryMarks;
+    float totalMarks, percentage;
 
-    printf("Enter Operand 1: ");
-    scanf("%f", &operand1);
+   
+    printf("Enter Roll No: ");
+    scanf("%d", &rollNo);
+    printf("Enter Name: ");
+    scanf(" %[^\n]s", name); 
+    printf("Enter Physics Marks: ");
+    scanf("%f", &physicsMarks);
+    printf("Enter Math Marks: ");
+    scanf("%f", &mathMarks);
+    printf("Enter Chemistry Marks: ");
+    scanf("%f", &chemistryMarks);
 
-    printf("Enter Operator (+, -, *, /): ");
-    scanf(" %c", &operator);
+   
+    totalMarks = physicsMarks + mathMarks + chemistryMarks;
+    percentage = (totalMarks / 300) * 100;
 
-    printf("Enter Operand 2: ");
-    scanf("%f", &operand2);
-
-    switch (operator) {
-        case '+':
-            result = operand1 + operand2;
-            printf("Result: %.2f\n", result);
-            break;
-        case '-':
-            result = operand1 - operand2;
-            printf("Result: %.2f\n", result);
-            break;
-        case '*':
-            result = operand1 * operand2;
-            printf("Result: %.2f\n", result);
-            break;
-        case '/':
-            if (operand2 != 0) {
-                result = operand1 / operand2;
-                printf("Result: %.2f\n", result);
-            } else {
-                printf("Error: Division by zero is not allowed.\n");
-            }
-            break;
-        default:
-            printf("Error: Invalid operator.\n");
-            break;
-    }
+    printf("\n-------- Student Summary --------\n");
+    printf("Roll No: %d\n", rollNo);
+    printf("Name: %s\n", name);
+    printf("Physics Marks: %.2f\n", physicsMarks);
+    printf("Math Marks: %.2f\n", mathMarks);
+    printf("Chemistry Marks: %.2f\n", chemistryMarks);
+    printf("Total Marks: %.2f\n", totalMarks);
+    printf("Percentage: %.2f%%\n", percentage);
 
     return 0;
 }
